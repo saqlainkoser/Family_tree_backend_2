@@ -42,8 +42,8 @@ const convertImage = async (buffer) => {
                 const autoCropUrl = cloudinary.url(result.public_id, {
                     crop: 'auto',
                     gravity: 'auto',
-                    width: 10,
-                    height: 10,
+                    width: 500,
+                    height: 500,
                 });
                 
                 console.log("Auto Crop URL:", autoCropUrl);
