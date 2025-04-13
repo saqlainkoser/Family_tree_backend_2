@@ -25,7 +25,7 @@ const upload = multer({ storage });
 
 module.exports = {
     uploadImage: async (req, res) => {
-        console.log("Check");
+        console.log("Check uploadImageController");
         console.log(process.env.CLOUDINARY_CLOUD_NAME);
         try {
             if (!req.file) {

@@ -6,8 +6,8 @@ const { default: convertImage } = require('../cloud_image_convert/cloud_image_co
 
 // Define route for image upload
 router.post('/upload-image', upload.single('image'), async (req, res) => {
+  console.log("Check imageUploadRoute");
   try {
-    console.log("Check");
     // The file is already uploaded to Cloudinary via multer-storage-cloudinary
     // The result is stored in req.file
     if (!req.file) {
@@ -16,7 +16,8 @@ router.post('/upload-image', upload.single('image'), async (req, res) => {
 
     // Return the secure URL of the uploaded image
     const cludinaryImageURL=await convertImage(req.file.path)
-
+    console.log(cludinaryImageURL);
+    
     res.json({
       imageUrl: cludinaryImageURL,
     });
