@@ -22,7 +22,7 @@ const convertImage = async (image) => {
            console.log(error);
        });
     
-    ("Upload Result:", uploadResult);
+    console.log("Upload Result:", uploadResult);
     
     // Optimize delivery by resizing and applying auto-format and auto-quality
     const optimizeUrl = cloudinary.url(uploadResult.public_id, {
@@ -30,7 +30,7 @@ const convertImage = async (image) => {
         quality: 'auto'
     });
     
-    ("Optimize URL:", optimizeUrl);
+    console.log("Optimize URL:", optimizeUrl);
     
     // Transform the image: auto-crop to square aspect_ratio
     const autoCropUrl = cloudinary.url(uploadResult.public_id, {
@@ -40,7 +40,7 @@ const convertImage = async (image) => {
         height: 10,
     });
     
-    ("Auto Crop URL:", autoCropUrl);
+    console.log("Auto Crop URL:", autoCropUrl);
     
     return autoCropUrl;
 };

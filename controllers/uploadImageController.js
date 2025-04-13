@@ -26,7 +26,7 @@ const upload = multer({ storage });
 module.exports = {
     uploadImage: async (req, res) => {
         console.log("Check");
-        
+        console.log(process.env.CLOUDINARY_CLOUD_NAME);
         try {
             if (!req.file) {
                 return res.status(400).json({ message: 'No image file provided' });
